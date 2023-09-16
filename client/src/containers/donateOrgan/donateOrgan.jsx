@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {
   MDBRow,
   MDBCol,
@@ -7,42 +7,51 @@ import {
   MDBBtn
 } from 'mdb-react-ui-kit';
 import "./donateOrgan.css"
+import axios from 'axios';
+
 
 export default function App() {
+    useEffect(async()=>{
+        const dataloc = navigator.geolocation.getCurrentPosition(showPosition)
+    function showPosition(position){
+        const latitude = position.coords.latitude
+        const longitude = position.coords.longitude
+    }
+    /*const { data } = await axios.patch("http://localhost:4000/user/:_id", { "email": email, "password": password })
+    if (data.success) {
+      dispatch(setLogin({ user: data.user, token: data.token }));
+      navigate("/home");
+    }*/
+    },[])   
   return (
     <section class="container">
-  <header>Registration Form</header>
+  <h4>Donation Form</h4>
   <form class="form" action="#">
       <div class="input-box">
-          <label>Full Name</label>
-          <input required="" placeholder="Enter full name" type="text"/>
+          <label>Medical History</label>
+          <input required="" placeholder="Enter Medical History" type="text"/>
       </div>
       <div class="column">
           <div class="input-box">
-            <label>Phone Number</label>
-            <input required="" placeholder="Enter phone number" type="telephone"/>
+            <label>Blood Type</label>
+            <div class="select-box">
+            <select>
+              <option hidden="">Select Blood Type</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
           </div>
           <div class="input-box">
             <label>Birth Date</label>
             <input required="" placeholder="Enter birth date" type="date"/>
           </div>
-      </div>
-      <div class="gender-box">
-        <label>Gender</label>
-        <div class="gender-option">
-          <div class="gender">
-            <input checked="" name="gender" id="check-male" type="radio"/>
-            <label for="check-male">Male</label>
-          </div>
-          <div class="gender">
-            <input name="gender" id="check-female" type="radio"/>
-            <label for="check-female">Female</label>
-          </div>
-          <div class="gender">
-            <input name="gender" id="check-other" type="radio"/>
-            <label for="check-other">Prefer not to say</label>
-          </div>
-        </div>
       </div>
       <div class="input-box address">
         <label>Address</label>
@@ -50,11 +59,15 @@ export default function App() {
         <div class="column">
           <div class="select-box">
             <select>
-              <option hidden="">Country</option>
-              <option>USA</option>
-              <option>UK</option>
-              <option>Germany</option>
-              <option>Japan</option>
+              <option hidden="">Organ</option>
+              <option>Kidney</option>
+              <option>Liver</option>
+              <option>Lungs</option>
+              <option>Heart</option>
+              <option>Pancreas</option>
+              <option>Eye</option>
+              <option>Bone Marrow</option>
+              <option>Skin</option>
             </select>
           </div>
         <input required="" placeholder="Enter your city" type="text"/>

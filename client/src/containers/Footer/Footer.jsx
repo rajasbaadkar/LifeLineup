@@ -21,9 +21,7 @@ const Footer = () => {
                           <li><Link href="#">Contact us</Link></li>
                           <li><Link href="#">Our Services</Link></li>
                           <li><Link href="#">Privacy Policy</Link></li>
-                          
                           <li><Link href="#">Terms & Conditions</Link></li>
-                          <li><Link href="#">Career</Link></li>
                       </ul>
                   </div>
 
@@ -31,7 +29,7 @@ const Footer = () => {
                       <Typography sx={{
                         color:"gray"
                       }}>LifeLineup Copyright © 2023 LifeLineup - All rights reserved</Typography>
-                  </Box>rem
+                  </Box>
               </div>
           </footer>
       </div>
