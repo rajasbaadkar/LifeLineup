@@ -9,6 +9,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cloudinary from "cloudinary";
 import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/users.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +31,7 @@ cloudinary.v2.config({
 })
 
 app.use("/auth",authRoutes);
+app.use("/user",userRoutes);
 
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {

@@ -27,6 +27,7 @@ const UserSchema = new mongoose.Schema(
         },
         bloodType: {
             type: String,
+            enum: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
             required: true
         },
         age: {
@@ -50,15 +51,23 @@ const UserSchema = new mongoose.Schema(
         notification: {
             type: [
                 {
+                    userId: {
+                        type: mongoose.Schema.Types.ObjectId,
+                        required: true
+                    },
                     userName: {
                         type: String,
                         required: true
                     },
-                    title: {
+                    message: {
                         type: String,
                         required: true,
                         default:"Organ donor found"
                     },
+                    image:{
+                        type:String,
+                        default: "/images/avatar-guy.jpg"
+                    }
                 }
             ],
             default: []
@@ -88,6 +97,29 @@ const UserSchema = new mongoose.Schema(
         medicalHistory:{
             type: String,
             default:"No medical history found"
+        },
+        potentialDonor:{
+            type:[
+                {
+                    userId: {
+                        type: mongoose.Schema.Types.ObjectId,
+                        required: true
+                    },
+                    userName: {
+                        type: String,
+                        required: true
+                    },
+                    location: {
+                        type: String,
+                        required: true,
+                    },
+                    image:{
+                        type:String,
+                        default: "/images/avatar-guy.jpg"
+                    }
+                }
+            ],
+            default:[]
         }
 
     },
