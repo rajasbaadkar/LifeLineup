@@ -16,7 +16,7 @@ const Login = () => {
          navigate("/")   
   }
   return (
-    <div>
+    <div className="bg-img">
       <div className="stockify__login">
         <h1>Sign In</h1>
         <form className="form">
