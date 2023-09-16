@@ -1,18 +1,27 @@
 import React from 'react';
 import './App.css';
-import Navbar from './containers/navbar/Navbar';
 import Login from './containers/Login/Login';
+import Navbar from './containers/navbar/Navbar';
 import { Route, Routes,BrowserRouter as Router } from 'react-router-dom';
-// import {Footer} from 'containers/Footer/Footer';
+import Home from './containers/Home/Home';
+import Footer from './containers/Footer/Footer';
+import Register from './containers/Register/Register';
+import "bootstrap/dist/css/bootstrap.min.css";
+// Import Bootstrap JS (and its dependencies)
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-          <Route path='/login' element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-      {/* <Footer/> */}
+      <Footer />
     </Router>
   );
 }

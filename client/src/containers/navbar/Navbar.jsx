@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,14 +12,17 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom";
 
-const pages = ["market trends","compare","predictions","news","watchlist"];
+
+
+const pages = ["Home","Donate Organs","Need an Organ","Connect With Doctor"];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,10 +40,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar sx={{ backgroundColor: "black",position:"fixed" }}>
+    <AppBar sx={{ backgroundColor: "black", position: "fixed" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -48,18 +51,18 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            STOCKIFY
+            LifeLineup
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -74,18 +77,18 @@ function Navbar() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
@@ -95,7 +98,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -103,31 +106,42 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display:"flex",justifyContent:"center" }}>
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
             {pages.map((page) => (
-              <Button key={page}onClick={handleCloseNavMenu}sx={{ my: 2, color: 'white', display: 'block',margin:"0 3em" }}>
-                <Link to={`/${page}`}>
-                    {page}
-                </Link>
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  margin: "0 3em",
+                }}
+              >
+                <Typography onClick={() => navigate(`/${page}`)}>
+                  {page}
+                </Typography>
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 1, display:"flex",justifyContent:"center" }}>
-            <Button sx={{ my: 2, color: 'white',margin:"0 8px"}}><Link to={"/login"}>Sign In</Link></Button>
-            <Button sx={{ my: 2, color: 'white',margin:"0 8px"}}><Link>Register</Link></Button>
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+            <Button sx={{ my: 2, color: "white", margin: "0 8px" }}>
+              <Typography onClick={() => navigate("/login")}>
+                Sign In
+              </Typography>
+            </Button>
           </Box>
-          
         </Toolbar>
       </Container>
     </AppBar>

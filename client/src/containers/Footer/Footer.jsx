@@ -27,7 +27,7 @@ const Footer = () => {
                   </div>
 
                   <div class="row">
-                      Stockify Copyright © 2021 Stockify - All rights reserved
+                      LifeLineup Copyright © 2023 LifeLineup - All rights reserved
                   </div>
               </div>
           </footer>

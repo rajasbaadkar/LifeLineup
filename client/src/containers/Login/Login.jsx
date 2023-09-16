@@ -1,4 +1,5 @@
-import {React,useState} from 'react'
+import React from 'react'
+import {useState} from 'react'
 import "./login.css"
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
@@ -32,14 +33,10 @@ const Login = () => {
           <input placeholder="Enter your Password" className="input" type="password" onChange={(e)=>setPassword(e.target.value)}/>
         </div>
         <div className="flex-row">
-          <div>
-            <input type="radio" />
-            <label>Remember me </label>
-          </div>
           <span className="span">Forgot password?</span>
         </div>
         <button className="button-submit" onClick={handleLogin}>Sign In</button>
-        <p className="p">Don't have an account? <span className="span">Sign Up</span>
+        <p className="p">Don't have an account? <button type="button" onClick={()=>navigate("/register")} className="span">Sign Up</button>
 
         </p><p className="p line">Or With</p>
 
