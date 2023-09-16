@@ -1,3 +1,16 @@
+
+.bg-img{
+  background-image: url("../../../public/images/background.jpg");
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .stockify__login{
     max-width: 100vmax;
     height: 100vh;
@@ -9,7 +22,7 @@
 }
 
 .stockify__login > h1{
-    color: white;
+    color: black;
     text-align: center;
     margin: 3vmin;
     text-transform: uppercase;

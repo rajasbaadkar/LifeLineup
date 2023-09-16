@@ -4,10 +4,12 @@ import Login from './containers/Login/Login';
 import Navbar from './containers/navbar/Navbar';
 import { Route, Routes,BrowserRouter as Router } from 'react-router-dom';
 import Home from './containers/Home/Home';
+import DonateOrgan from 'containers/donateOrgan/donateOrgan';
 import Footer from './containers/Footer/Footer';
 import Register from './containers/Register/Register';
 import UserProfile from './containers/UserProfile/UserProfile';
 import { Provider } from "react-redux";
+import WebChat from './containers/WebChat/WebChat';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile/:userId" element={<UserProfile />} />
+        <Route path="/chat" element={<WebChat />} />
+        <Route path="/donateOrgan" element={<DonateOrgan/>} />
       </Routes>
       <Footer />
     </Router>

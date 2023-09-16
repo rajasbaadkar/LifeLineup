@@ -7,8 +7,12 @@ const NeedSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        email:{
+            type: String, 
+            required: true
+        },
         name: {
-            type: "String",
+            type: String,
             enum: ["Kidney", "Liver", "Lungs", "Heart", "Pancreas", "Eye", "Bone Marrow", "Skin"],
             required: true
         },

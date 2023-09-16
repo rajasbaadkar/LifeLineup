@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import Need from "../models/Need.js";
 import Inventory from "../models/Inventory.js";
+import mailer from "../utils/sendMail.js";
 
 export const addOrgan = async (req, res) => {
     try {
@@ -20,11 +21,18 @@ export const addOrgan = async (req, res) => {
             bloodType,
         });
 
-        const notifications = matchingRecipients.map((recipient) => ({
-            recipientId: recipient.recipient, 
+        const emails = [];
+        const notifications = matchingRecipients.map(
+          (recipient) => ({
+            recipientId: recipient.recipient,
             message: `An organ matching your criteria (${name}, ${bloodType}) is available.`,
-        }));
+          }),
+          emails.push(recipient.email)
+        );
 
+        for(const email in emails){
+          mailer(email);
+        }
         for (const notification of notifications) {
             const recipientUser = await User.findById(notification.recipientId);
 

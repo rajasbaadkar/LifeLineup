@@ -1,6 +1,8 @@
 import React from 'react'
 import "./home.css";
-
+import {BiSolidGift} from "react-icons/bi"
+import {BsHeartFill} from "react-icons/bs"
+import {FaPeace} from "react-icons/fa"
 
 const Home = () => {
   return (
@@ -9,9 +11,6 @@ const Home = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-12">
-                    <h1 className="res-h1"></h1>
-                    <button className="btn btn-dark btn-lg down-but" type="button"><i className="fa-brands fa-apple"></i>  Download</button>
-                    <button className="btn btn-outline-light btn-lg down-but" type="button"><i className="fa-brands fa-google-play"></i> Download</button>
                 </div>
                 <div className="col-lg-6 iphone-div">
                 </div>
@@ -23,19 +22,16 @@ const Home = () => {
         <div className="fea">
             <div className="row">
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-sharp fa-solid fa-heart fa-4x icon"></i>
-                    <h3 className="h3-styling">We respect the decision you make.</h3>
-                    <p className="fea-text">.</p>
+                    <BiSolidGift size="75px"/>
+                    <h3 className="h3-styling">Gift of Life<br/><br/>Organ donation is the ultimate gift, offering a second chance at life and the beauty it holds.</h3>
                 </div>
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-solid fa-store fa-4x icon"></i>
-                    <h3 className="h3-styling">Effortless advertisement of your store.</h3>
-                    <p className="fea-text">.</p>
+                    <FaPeace size="75px"/>
+                    <h3 className="h3-styling">Every Organ Counts<br/><br/>Each organ and tissue has life-transforming potential—never underestimate your generous impact.</h3>
                 </div>
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-solid fa-circle-check fa-4x icon"></i>
-                    <h3 className="h3-styling">Buy groceries from your trusted stores.</h3>
-                    <p className="fea-text">Trust your daily store? Purchase via GroceryMe and avail huge discounts.</p>
+                    <BsHeartFill size="75px"/>
+                    <h3 className="h3-styling">Chain of Compassion<br/><br/>One donor can ignite a chain of kindness, inspiring others to save lives too.</h3>
                 </div>
             </div>
         </div>
@@ -51,39 +47,39 @@ const Home = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="container-fluid caro-mar">
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">Trust in expert-verified products and the utmost safety and privacy standards with LifeLineup, ensuring confidence in organ donation and more.</h2>
                         <div className="row test-photo-1">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-1" src="/images/groceries.jpeg" alt="grocery-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-1">
-                                <em>Fresh groceries delivered instantly.</em>
+                                <em>Verified Excellence!!</em>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div className="container-fluid caro-mar">
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">We provide secure matches based on various parameters, offering convenient in-person and online options to connect donors and recipients.</h2>
                         <div className="row test-photo-2">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-2" src="/images/grains.jpeg" alt="grains-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-2">
-                                <em>Organic grains from the farms to you.</em>
+                                <em>Match with Confidence!!</em>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div className="container-fluid caro-mar">  
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">Prioritizing speed, we swiftly connect donors and recipients, delivering hope one transplant at a time.</h2>
                         <div className="row test-photo-3">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-3" src="/images/fmcg.jpg" alt="fmcg-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-3">
-                                <em>Expert-verified products for you daily needs.</em>
+                                <em>Swift Connections!!</em>
                             </div>
                         </div>
                     </div>
@@ -102,7 +98,7 @@ const Home = () => {
 
     <section id="cta">
         <div className="container-fluid">
-            <h3 className="cta-text">Join GroceryMe today and buy or sell groceries at amazing discounts.</h3>
+            <h3 className="cta-text">Join LifeLineup today and become a vital part of our mission to save lives, one transplant at a time. Your decision can make a life-changing difference!</h3>
             <button className="btn btn-dark btn-lg down-but" type="button"><i className="fa-brands fa-apple"></i>  Download</button>
             <button className="btn btn-outline-light btn-lg down-but" type="button"><i className="fa-brands fa-google-play"></i> Download</button>
         </div>
