@@ -6,9 +6,7 @@ import { Route, Routes,BrowserRouter as Router } from 'react-router-dom';
 import Home from './containers/Home/Home';
 import Footer from './containers/Footer/Footer';
 import Register from './containers/Register/Register';
-import "bootstrap/dist/css/bootstrap.min.css";
-// Import Bootstrap JS (and its dependencies)
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import UserProfile from './containers/UserProfile/UserProfile';
 
 
 function App() {
@@ -20,6 +18,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </Router>

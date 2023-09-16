@@ -16,7 +16,7 @@ const Register = () => {
    const [gender, setGender] = React.useState('');
 
    const handleChange = (event) => {
-    setGender(event.target.value);
+    setGender(event.target.value); 
   };
   return (
     <section id="login-box">
