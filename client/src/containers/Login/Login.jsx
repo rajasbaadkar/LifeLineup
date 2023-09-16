@@ -4,20 +4,26 @@ import "./login.css"
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import { Typography } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { setLogin } from 'state'
 
 const Login = () => {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleLogin = async(e)=>{
     e.preventDefault()
-    const {data} = await axios.post("http://localhost:4000/auth/login",{"email":email,"password":password},{withCredentials:true})
-    if(data.success)
-         navigate("/")   
+    const {data} = await axios.post("http://localhost:4000/auth/login",{"email":email,"password":password})
+    if(data.success){
+         dispatch(setLogin({user:data.user, token:data.token}));
+         navigate("/home");   
+    }
   }
   return (
     <div className="stockify__login">
-      <h1>Sign In</h1>
+      <h1 style={{color:"#FF2625"}}>Sign In</h1>
       <form className="form">
         <div className="flex-column">
           <label>Email </label>

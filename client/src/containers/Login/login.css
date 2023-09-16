@@ -1,7 +1,7 @@
 .stockify__login{
     max-width: 100vmax;
     height: 100vh;
-    background-color: var(--background-clr);
+    background-color: "#FFFAFB";
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -12,14 +12,20 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { setLogout } from 'state';
+import { FormControl, InputBase, Select } from '@mui/material';
 
 
 
-const pages = ["Home","Donate Organs","Need an Organ","Connect With Doctor"];
+const pages = ["Home", "Donate Organs", "Need an Organ", "Connect With Doctor"];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.token);
+  const user = useSelector((state) => state.user);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -39,8 +45,12 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  const handleDeleteUser = () => {
+
+  }
+
   return (
-    <AppBar sx={{ backgroundColor: "black", position: "fixed" }}>
+    <AppBar sx={{ backgroundColor: "#FFFAFB", position: "fixed" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -55,7 +65,7 @@ function Navbar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#FF2625",
               textDecoration: "none",
             }}
           >
@@ -69,7 +79,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="#FF2625"
             >
               <MenuIcon />
             </IconButton>
@@ -111,22 +121,40 @@ function Navbar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "black",
               textDecoration: "none",
             }}
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end", gap: "1rem" }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "white",
+                  color: "black",
                   display: "block",
-                  margin: "0 3em",
+                  textTransform: "capitalize",
+                  "&:hover":{
+                    backgroundColor:"inherit"
+                  },
+                  "&::after": {
+                    content: '""',
+                    display: "block",
+                    height: "4px",
+                    width: "93%",
+                    transform: "scaleX(0)",
+                    backgroundColor: "#FF2625",
+                    transformOrigin: "left",
+                    transition: "transform 0.3s ease",
+                    position: "absolute", // Add this for positioning the pseudo-element
+                    bottom: 0, // Adjust this to position the line where you want
+                  },
+                  "&:hover::after": {
+                    transform: "scaleX(1)",
+                  },
                 }}
               >
                 <Typography onClick={() => navigate(`/${page}`)}>
@@ -135,12 +163,42 @@ function Navbar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
-            <Button sx={{ my: 2, color: "white", margin: "0 8px" }}>
+          <Box sx={{ display: "flex" }}>
+            {!isLoggedIn ? (<Button sx={{ my: 2, color: "black", margin: "0 8px" }}>
               <Typography onClick={() => navigate("/login")}>
                 Sign In
               </Typography>
-            </Button>
+            </Button>) : (
+              <FormControl variant='standard' value={`${user.firstName} ${user.lastName}`} sx={{ p: "0rem 1rem" }}>
+                <Select
+                  value={`${user.firstName} ${user.lastName}`}
+                  sx={{
+                    backgroundColor: "#FFE5E5",
+                    width: "200px",
+                    borderRadius: "0.25rem",
+                    p: "0.25rem 1rem",
+                    "& .MuiSvgIcon-root": {
+                      pr: "0.25rem",
+                      width: "3rem"
+                    },
+                    "& .MuiSelect-select:focus": {
+                      backgroundColor: "#FFE5E5"
+                    }
+                  }}
+                  input={<InputBase />}
+                >
+                  <MenuItem value={`${user.firstName} ${user.lastName}`}>
+                    <Typography>{`${user.firstName} ${user.lastName}`}</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={() => navigate(`/profile/${user._id}`)}>
+                    User profile
+                  </MenuItem>
+                  <MenuItem onClick={() => dispatch(setLogout())}>
+                    Log Out
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            )}
           </Box>
         </Toolbar>
       </Container>

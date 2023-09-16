@@ -1,6 +1,7 @@
 import React from 'react'
 import "./footer.css"
 import { Link } from 'react-router-dom'
+import { Box, Typography } from '@mui/material'
 
 const Footer = () => {
   return (
@@ -8,12 +9,12 @@ const Footer = () => {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           <footer>
               <div class="footer">
-                  <div class="row">
-                      <Link href="#"><i class="fa fa-facebook"></i></Link>
-                      <Link href="#"><i class="fa fa-instagram"></i></Link>
-                      <Link href="#"><i class="fa fa-youtube"></i></Link>
-                      <Link href="#"><i class="fa fa-twitter"></i></Link>
-                  </div>
+                  <Box display="flex" flexDirection="row" justifyContent="center" gap="3rem">
+                      <Link href="#"><i style={{color:"gray"}} class="fa fa-facebook"></i></Link>
+                      <Link href="#"><i style={{color:"gray"}} class="fa fa-instagram"></i></Link>
+                      <Link href="#"><i style={{color:"gray"}} class="fa fa-youtube"></i></Link>
+                      <Link href="#"><i style={{color:"gray"}} class="fa fa-twitter"></i></Link>
+                  </Box>
 
                   <div class="row">
                       <ul>
@@ -26,9 +27,11 @@ const Footer = () => {
                       </ul>
                   </div>
 
-                  <div class="row">
-                      LifeLineup Copyright © 2023 LifeLineup - All rights reserved
-                  </div>
+                  <Box display="flex" justifyContent="center">
+                      <Typography sx={{
+                        color:"gray"
+                      }}>LifeLineup Copyright © 2023 LifeLineup - All rights reserved</Typography>
+                  </Box>rem
               </div>
           </footer>
       </div>

@@ -7,6 +7,7 @@ import Home from './containers/Home/Home';
 import Footer from './containers/Footer/Footer';
 import Register from './containers/Register/Register';
 import UserProfile from './containers/UserProfile/UserProfile';
+import { Provider } from "react-redux";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/profile/:userId" element={<UserProfile />} />
       </Routes>
       <Footer />
     </Router>
