@@ -1,5 +1,15 @@
+
 .bg-img{
-  background-image: url("./images/bg_login.jpeg");
+  background-image: url("../../../public/images/background.jpg");
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .stockify__login{
     max-width: 100vmax;
@@ -22,7 +32,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
     padding: 30px;
     width: 450px;
     border-radius: 20px;

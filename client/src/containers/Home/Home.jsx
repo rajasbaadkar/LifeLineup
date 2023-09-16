@@ -1,6 +1,8 @@
 import React from 'react'
 import "./home.css";
-
+import {BiSolidGift} from "react-icons/bi"
+import {BsHeartFill} from "react-icons/bs"
+import {FaPeace} from "react-icons/fa"
 
 const Home = () => {
   return (
@@ -9,9 +11,6 @@ const Home = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-12">
-                    <h1 className="res-h1"></h1>
-                    <button className="btn btn-dark btn-lg down-but" type="button"><i className="fa-brands fa-apple"></i>  Download</button>
-                    <button className="btn btn-outline-light btn-lg down-but" type="button"><i className="fa-brands fa-google-play"></i> Download</button>
                 </div>
                 <div className="col-lg-6 iphone-div">
                 </div>
@@ -23,19 +22,16 @@ const Home = () => {
         <div className="fea">
             <div className="row">
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-sharp fa-solid fa-heart fa-4x icon"></i>
-                    <h3 className="h3-styling">We respect the decision you make.</h3>
-                    <p className="fea-text">.</p>
+                    <BiSolidGift size="75px"/>
+                    <h3 className="h3-styling">Gift of Life<br/><br/>Organ donation is the ultimate gift, offering a second chance at life and the beauty it holds.</h3>
                 </div>
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-solid fa-store fa-4x icon"></i>
-                    <h3 className="h3-styling">Effortless advertisement of your store.</h3>
-                    <p className="fea-text">.</p>
+                    <FaPeace size="75px"/>
+                    <h3 className="h3-styling">Every Organ Counts<br/><br/>Each organ and tissue has life-transforming potential—never underestimate your generous impact.</h3>
                 </div>
                 <div className="col-lg-4 fea-head">
-                    <i className="fa-solid fa-circle-check fa-4x icon"></i>
-                    <h3 className="h3-styling">Buy groceries from your trusted stores.</h3>
-                    <p className="fea-text">Trust your daily store? Purchase via GroceryMe and avail huge discounts.</p>
+                    <BsHeartFill size="75px"/>
+                    <h3 className="h3-styling">Chain of Compassion<br/><br/>One donor can ignite a chain of kindness, inspiring others to save lives too.</h3>
                 </div>
             </div>
         </div>
