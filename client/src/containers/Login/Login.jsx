@@ -10,9 +10,9 @@ const Login = () => {
   const navigate = useNavigate()
   const handleLogin = async(e)=>{
     e.preventDefault()
-    //const {data} = await axios.post("http://localhost:8000/users/login",{"email":email,"password":password},{withCredentials:true})
-    // if(data.success)
-    //     navigate("/")   
+    const {data} = await axios.post("http://localhost:4000/auth/login",{"email":email,"password":password},{withCredentials:true})
+    if(data.success)
+         navigate("/")   
   }
   return (
     <div className='stockify__login'>
