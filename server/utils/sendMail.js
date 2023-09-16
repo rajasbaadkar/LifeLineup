@@ -22,11 +22,4 @@ const mailer = (mailOptions) => {
     }
 }
 
-const mailOptions = {
-    from: "LifeLineUp",
-    to: emails,
-    subject: "Potential Organ Donor Found!!",
-    text: "A new donor has listed an organ up for donation that is a potential match as per your request.",
-};
-
 export default mailer;

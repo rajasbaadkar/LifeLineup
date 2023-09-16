@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-
+import LayoutDrawer from "containers/LayoutDrawer";
 
 function App() {
   const {userId} = useParams();
@@ -38,6 +38,8 @@ function App() {
   // };
 
   return (
+    <>
+    <LayoutDrawer/>
       <div className="container">
         <div className="row justify-content-end">
           <div className="col-8">
@@ -89,6 +91,7 @@ function App() {
           </div>
         </div>
       </div>
+      </>
   );
 }
 

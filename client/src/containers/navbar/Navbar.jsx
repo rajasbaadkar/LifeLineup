@@ -151,6 +151,7 @@ function Navbar() {
                     transition: "transform 0.3s ease",
                     position: "absolute", // Add this for positioning the pseudo-element
                     bottom: 0, // Adjust this to position the line where you want
+                    
                   },
                   "&:hover::after": {
                     transform: "scaleX(1)",
