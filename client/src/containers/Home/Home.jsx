@@ -9,7 +9,7 @@ const Home = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-12">
-                    <h1 className="res-h1">Great groceries delivered instantly!</h1>
+                    <h1 className="res-h1"></h1>
                     <button className="btn btn-dark btn-lg down-but" type="button"><i className="fa-brands fa-apple"></i>  Download</button>
                     <button className="btn btn-outline-light btn-lg down-but" type="button"><i className="fa-brands fa-google-play"></i> Download</button>
                 </div>
@@ -25,12 +25,12 @@ const Home = () => {
                 <div className="col-lg-4 fea-head">
                     <i className="fa-sharp fa-solid fa-heart fa-4x icon"></i>
                     <h3 className="h3-styling">We respect the decision you make.</h3>
-                    <p className="fea-text">Get groceries delivered to your doorstep or pick it up from the store.</p>
+                    <p className="fea-text">.</p>
                 </div>
                 <div className="col-lg-4 fea-head">
                     <i className="fa-solid fa-store fa-4x icon"></i>
                     <h3 className="h3-styling">Effortless advertisement of your store.</h3>
-                    <p className="fea-text">If you own a store, market your products to the nearby locality.</p>
+                    <p className="fea-text">.</p>
                 </div>
                 <div className="col-lg-4 fea-head">
                     <i className="fa-solid fa-circle-check fa-4x icon"></i>
