@@ -30,14 +30,19 @@ export const addOrgan = async (req, res) => {
           emails.push(recipient.email)
         );
 
-        for(const email in emails){
-          mailer(email);
-        }
+        const mailOptions = {
+          from: "LifeLineUp",
+          to: emails,
+          subject: "Potential Organ Donor Found!!",
+          text: "A new donor has listed an organ up for donation that is a potential match as per your request.",
+        };
+        mailer(mailOptions);
+        
         for (const notification of notifications) {
             const recipientUser = await User.findById(notification.recipientId);
 
             if (recipientUser) {
-                recipientUser.notifications.push({UserName:name, UserId:donorId, message});
+                recipientUser.notification.push({UserName:name, UserId:donorId, message});
                 await recipientUser.save();
             }
         }
@@ -51,7 +56,7 @@ export const addOrgan = async (req, res) => {
 }
 
 // Remove an item from the inventory by ID
-export const removeItemFromInventory = async (req, res) => {
+export const removeOrganFromInventory = async (req, res) => {
     try {
       const { itemId } = req.params;
       await Inventory.findByIdAndDelete(itemId);

@@ -1,4 +1,4 @@
-import Need from "../models/Need";
+import Need from "../models/Need.js";
 
 // Add a new need
 export const addNeed = async (req, res) => {
@@ -52,7 +52,7 @@ export const addNeed = async (req, res) => {
       const need = await Need.findById(needId);
   
       if (!need) {
-        return res.status(404).json({ message: "Need not found" });
+        return res.status(404).json({ message: "Needy not found" });
       }
   
       return res.status(200).json(need);

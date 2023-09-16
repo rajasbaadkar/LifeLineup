@@ -45,7 +45,7 @@ const UserSchema = new mongoose.Schema(
             },
             url: {
                 type: String,
-                default: "",
+                default: "/images/avatar-guy.jpg",
             }
         },
         notification: {
