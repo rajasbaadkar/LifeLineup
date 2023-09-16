@@ -1,8 +1,5 @@
 
 .bg-img{
-<<<<<<< HEAD
-  /* background-image: url("./images/bg_login.jpeg"); */
-=======
   background-image: url("../../../public/images/background.jpg");
 
 
@@ -13,7 +10,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
->>>>>>> 31dc8b296bc88f7f51c13efcda9a07f611318340
 }
 .stockify__login{
     max-width: 100vmax;
