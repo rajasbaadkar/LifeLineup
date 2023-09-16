@@ -8,6 +8,7 @@ import DonateOrgan from 'containers/donateOrgan/donateOrgan';
 import Footer from './containers/Footer/Footer';
 import Register from './containers/Register/Register';
 import UserProfile from './containers/UserProfile/UserProfile';
+import { Provider } from "react-redux";
 import WebChat from './containers/WebChat/WebChat';
 
 
@@ -20,7 +21,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/profile/:userId" element={<UserProfile />} />
         <Route path="/chat" element={<WebChat />} />
         <Route path="/donateOrgan" element={<DonateOrgan/>} />
       </Routes>

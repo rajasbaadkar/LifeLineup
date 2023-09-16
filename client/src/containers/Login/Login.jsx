@@ -1,19 +1,25 @@
 import React from 'react'
-import {useState} from 'react'
+import { useState } from 'react'
 import "./login.css"
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Typography } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { setLogin } from 'state'
 
 const Login = () => {
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
-  const navigate = useNavigate()
-  const handleLogin = async(e)=>{
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     e.preventDefault()
-    const {data} = await axios.post("http://localhost:4000/auth/login",{"email":email,"password":password},{withCredentials:true})
-    if(data.success)
-         navigate("/")   
+    const { data } = await axios.post("http://localhost:4000/auth/login", { "email": email, "password": password })
+    if (data.success) {
+      dispatch(setLogin({ user: data.user, token: data.token }));
+      navigate("/home");
+    }
   }
   return (
     <div className="bg-img">
