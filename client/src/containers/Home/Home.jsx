@@ -47,39 +47,39 @@ const Home = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="container-fluid caro-mar">
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">Trust in expert-verified products and the utmost safety and privacy standards with LifeLineup, ensuring confidence in organ donation and more.</h2>
                         <div className="row test-photo-1">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-1" src="/images/groceries.jpeg" alt="grocery-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-1">
-                                <em>Fresh groceries delivered instantly.</em>
+                                <em>Verified Excellence!!</em>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div className="container-fluid caro-mar">
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">We provide secure matches based on various parameters, offering convenient in-person and online options to connect donors and recipients.</h2>
                         <div className="row test-photo-2">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-2" src="/images/grains.jpeg" alt="grains-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-2">
-                                <em>Organic grains from the farms to you.</em>
+                                <em>Match with Confidence!!</em>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div className="container-fluid caro-mar">  
-                        <h2 className="h2-styling">No problem even if you don't trust online delivery of groceries, we've got both the options!</h2>
+                        <h2 className="h2-styling">Prioritizing speed, we swiftly connect donors and recipients, delivering hope one transplant at a time.</h2>
                         <div className="row test-photo-3">
                             <div className="col-lg-6">
                                 {/* <img className="img-test-3" src="/images/fmcg.jpg" alt="fmcg-photo"> */}
                             </div>
                             <div className="col-lg-6 test-text-3">
-                                <em>Expert-verified products for you daily needs.</em>
+                                <em>Swift Connections!!</em>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ const Home = () => {
 
     <section id="cta">
         <div className="container-fluid">
-            <h3 className="cta-text">Join GroceryMe today and buy or sell groceries at amazing discounts.</h3>
+            <h3 className="cta-text">Join LifeLineup today and become a vital part of our mission to save lives, one transplant at a time. Your decision can make a life-changing difference!</h3>
             <button className="btn btn-dark btn-lg down-but" type="button"><i className="fa-brands fa-apple"></i>  Download</button>
             <button className="btn btn-outline-light btn-lg down-but" type="button"><i className="fa-brands fa-google-play"></i> Download</button>
         </div>
