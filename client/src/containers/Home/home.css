@@ -5,6 +5,10 @@ body {
 #title {
     background-color: #FFFF;
     padding-top: 7.5%;
+    background-image: url("../../../public/images/hero.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    padding-top: 100px;
 }
 
 h1 {

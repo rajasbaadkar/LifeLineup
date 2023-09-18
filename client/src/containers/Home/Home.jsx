@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./home.css";
 import { BiSolidGift } from "react-icons/bi"
 import { BsHeartFill } from "react-icons/bs"

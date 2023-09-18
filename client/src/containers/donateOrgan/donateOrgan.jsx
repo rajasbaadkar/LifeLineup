@@ -203,5 +203,3 @@ const DonateOrgan = () => {
     </Stack>
   );
 }
-
-export default DonateOrgan;
