@@ -1,16 +1,16 @@
 
-.bg-img{
-  background-image: url("../../../public/images/background.jpg");
+/* .bg-img{
+  background-image: url("../../images/img2.webp");
 
 
-  /* Full height */
+  /* Full height 
   height: 100%;
 
-  /* Center and scale the image nicely */
-  background-position: center;
+  /* Center and scale the image nicely 
+  background-position:left;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 .stockify__login{
     max-width: 100vmax;
     height: 100vh;

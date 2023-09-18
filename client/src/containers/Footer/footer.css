@@ -3,7 +3,7 @@
 }
 
 .footer{
-    background:#000;
+    background:#ffe6e3;
     padding:30px 0px;
     font-family: 'Play', sans-serif;
     text-align: center;
@@ -14,19 +14,19 @@
     flex-direction: row;
     margin:1% 0%;
     padding:0.6% 0%;
-    color:gray;
+    color:#000;
     font-size:0.8em;
 }
     
 .footer .row a{
     text-decoration:none;
-    color:gray;
+    color:#000;
     transition:0.5s;
     
 }
     
 .footer .row a:hover{
-    color:#fff;
+    color:red;
 }
     
 .footer .row ul{

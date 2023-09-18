@@ -114,8 +114,7 @@ h1 {
 /* Testimonials */
 
 #testimonials {
-    padding: 3% 5%;
-    background-color: #8fed66;
+    background-color: #ffe6e3;
     text-align: center;
 }
 
@@ -230,17 +229,42 @@ h1 {
 /* CTA */
 
 #cta {
-    background-color: #8fed66;
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
+#cta-begin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cta-text{
+    padding: 0rem 10rem;
     padding-top: 2%;
     padding-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Sen', sans-serif;
     font-weight: 900;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
+
+.cta-btn{
+    padding: 1rem 4rem;
+    border-radius: 4rem;
+    margin: 4rem;
+    border: 0;
+    background-color: #ffe6e3;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform .6s;
+}
+
+.cta-btn:hover{
+    transform: scale(1.1);
+}
+
 
 /* Footer */
 
@@ -252,3 +276,15 @@ h1 {
 /* #navbarDiv{
     position: fixed !important;
 } */
+
+.img-btn{
+    transition: transform .6s;
+}
+
+.img-btn:hover{
+    transform: scale(1.1);
+}
+
+.carousel-inner{
+    padding: 0;
+}

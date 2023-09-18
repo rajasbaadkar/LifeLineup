@@ -1,8 +1,20 @@
 body{
     /* background-image: url(../../images/reg_c_blur.jpg); */
-    
+    background-color: #FFFAFB;
     background-size: cover;
 }
+ .bg-img{
+  background-image: url("../../images/img2.webp");
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position:left;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
 
 .form_container {
     width: 1000px;
